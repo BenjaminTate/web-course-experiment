@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <title>今日热榜</title>
+        <style type="text/css">
+        	.icon{cursor:pointer;float:right;width:30px;height:30px}*{margin:0;padding:0;outline:0;vertical-align:baseline;-webkit-box-sizing:border-box;box-sizing:border-box;-webkit-tap-highlight-color:transparent}html,body{color:#000;background:#e5e3e6;font:12px/22px Verdana,Arial,sans-serif,"Times New Roman",思源宋体;width:100%}input,select,button{font-size:100%;outline:0;vertical-align:middle;-webkit-appearance:none}button{border:0;background-clip:padding-box}table{border-collapse:collapse;border-spacing:0}ol,ul,li{list-style:none}img{border:0;vertical-align:baseline}a,a:link,a:visited{color:#000;text-decoration:none}a:hover{color:#000;text-decoration:none}textarea,input{word-wrap:break-word;word-break:break-all}span,p,div{word-wrap:break-word}.left{float:left}.right{float:right}.clearfix{content:'';display:block;clear:both}header{width:100%;height:52;margin:0 auto;background-color:#f5f5f5}.header{width:90%;height:52;margin:0 auto;background-color:#f5f5f5}.header .logo{width:144px;height:52px}.header .logo img{max-width:100%;height:auto;padding:.5rem 1rem}.header .menu{font-size:14px;line-height:2.5rem;color:#e5e3e6}.main{width:90%;height:100%;margin:0 auto;background-color:#f5f5f5}.main-body{width:100%;height:auto;padding-top:1rem;background-color:#f5f5f5}.main-bar{width:100%;border-bottom:1px solid #e8e8e8}.main-bar ul{width:83%;display:flex;flex-direction:row;flex-wrap:wrap;font-size:16px;margin-left:2rem;margin-bottom:.5rem}.main-bar ul li{cursor:pointer;width:45px;text-align:center;flex:auto;line-height:23px}.active{background-color:#3273dc;border-radius:5px}.content-item{width:100%;height:auto;font-size:14px;padding:10px 5px;border-bottom:1px solid #e8e8e8}.carousel{position:relative;width:83%;height:700px;overflow:hidden}.carousel .wrap{position:relative;width:100%;height:100%}.carousel .wrap .carousel-item{position:absolute;top:0;width:100%;height:100%;opacity:0;transition:opacity 1s}footer div{text-align:center;font-size:16px}footer div span{color:red;font-weight:bolder}
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="header">
+                <div class="logo left">
+                    <img src="http://hot.mrcuriosity.org/static/media/logo.3aef62c0.svg" alt="logo" title="今日热榜">
+                </div>
+                <div class="menu right">
+                    <a href="feedback.html">反馈</a>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </header>
+        
+        <div class="main">
+            <div class="main-body">
+                <div class="main-bar">
+                    <ul>
+                        <li>知乎</li>
+                        <li>v2ex</li>
+                        <li>微博</li>
+                        <li>贴吧</li>
+                        <li>天涯</li>
+                        <li>虎扑</li>
+                        <li>Github</li>
+                        <li>华尔街见闻</li>
+                    </ul>
+                </div>
+                <div id="carousel" class="carousel">
+                    <div class="wrap">
+                            <div class="carousel-item">
+                                <div id="zhihu-content" class="content">
+                                    <div class="content-list"></div>
+                                </div>
+                                <!-- <img src="https://file.ipadown.com/tophub/assets/images/media/zhihu.com.png" width="300px" height="300px" alt=""> -->
+                            </div>
+                            <div class="carousel-item">
+                                <div id="v2ex-content" class="content">
+                                    <div class="content-list"></div>
+                                </div>
+                                <!-- <img src="https://file.ipadown.com/tophub/assets/images/media/v2ex.com.png" width="300px" height="300px" alt=""> -->
+                            </div>
+                            <div class="carousel-item">
+                                <div id="weibo-content" class="content">
+                                    <div class="content-list"> </div>
+                                </div>
+                                <!-- <img src="https://file.ipadown.com/tophub/assets/images/media/s.weibo.com.png" width="300px" height="300px" alt=""> -->
+                            </div>
+                            <div class="carousel-item">
+                                <div id="tieba-content" class="content">
+                                    <div class="content-list"></div>
+                                </div>
+                                <!-- <img src="https://file.ipadown.com/tophub/assets/images/media/tieba.baidu.com.png" width="300px" height="300px" alt=""> -->
+                            </div>
+                            <div class="carousel-item">
+                                <div id="tianya-content" class="content">
+                                    <div class="content-list"></div>
+                                </div>
+                                <!-- <img src="https://file.ipadown.com/tophub/assets/images/media/bbs.tianya.cn.png" width="300px" height="300px" alt=""> -->
+                            </div>
+                            <div class="carousel-item">
+                                <div id="hupu-content" class="content">
+                                    <div class="content-list"></div>
+                                </div>
+                                <!-- <img src="https://file.ipadown.com/tophub/assets/images/media/bbs.hupu.com.png" width="300px" height="300px" alt=""> -->
+                            </div>
+                            <div class="carousel-item">
+                                <div id="github-content" class="content">
+                                    <div class="content-list"></div>
+                                </div>
+                                <!-- <img src="https://file.ipadown.com/tophub/assets/images/media/github.com.png" width="300px" height="300px" alt=""> -->
+                            </div>
+                            <div class="carousel-item">
+                                <div id="wallstreetcn-content" class="content">
+                                    <div class="content-list"></div>
+                                </div>
+                                <!-- <img src="https://file.ipadown.com/tophub/assets/images/media/wallstreetcn.com.png" width="300px" height="300px" alt=""> -->
+                            </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div>本站所有数据来源于<a href="http://hot.mrcuriosity.org"><span>今日热榜</span></a>,如有侵权，请点击右上角反馈</div>
+        </footer>
+    </body>
+    <script>
+        let carousel = document.querySelector("#carousel");
+        let carouselItem = document.querySelectorAll(".carousel-item");
+        carouselItem[0].style.opacity = "1";
+        let aLi = document.querySelectorAll(".main-bar li");
+        let timer = setInterval("Time()",5000);/*调用定时器*/
+
+        carouselItem[0].style.opacity = "1";
+        carouselItem[0].style.zIndex = 999;
+        aLi[0].className = "active";
+        let num = 0;
+
+        for(let i = 0;i < aLi.length;i++){
+            aLi[i].index = i;
+            aLi[i].onclick = function(){  //点击菜单栏相对应的进行切换
+                for(let j = 0 ;j < aLi.length; j++){
+                    num = this.index;
+                    aLi[j].className = "";
+                    carouselItem[j].style.opacity = "0";
+                    carouselItem[j].style.zIndex = -1;
+                }
+                aLi[num].className = "active";
+                carouselItem[num].style.opacity = "1";
+                carouselItem[num].style.zIndex = 999;
+                clearInterval(timer);
+            }
+            aLi[i].onmouseout = function(){/*鼠标移出，重新调用定时器，轮播图开始*/
+                clearInterval(timer);
+                timer = setInterval("Time()",5000);
+            }
+        }
+
+        function Time(){/*设置定时器运行的函数*/
+            num++;
+            if(num < aLi.length){
+                for(let j = 0 ;j < aLi.length; j++){
+                    aLi[j].className = "";
+                    carouselItem[j].style.opacity = "0";
+                    carouselItem[j].style.zIndex = -1;
+                }
+                aLi[num].className = "active";
+                carouselItem[num].style.opacity = "1";
+                carouselItem[num].style.zIndex = 999;
+            }else {
+                num = -1;
+            }         
+        }
+        // clearInterval(timer);
+        
+        carousel.onmouseover = function(){/*鼠标引入，清除定时器，轮播图停止*/
+            clearInterval(timer);
+        };
+        carousel.onmouseout = function(){/*鼠标移出，重新调用定时器，轮播图开始*/
+            clearInterval(timer);
+            timer = setInterval("Time()",5000);
+        };
+
+        loadContent('http://api-hot.mrcuriosity.org/sites/2/news?format=json', '#zhihu-content');
+        loadContent('http://api-hot.mrcuriosity.org/sites/3/news?format=json', '#v2ex-content');
+        loadContent('http://api-hot.mrcuriosity.org/sites/4/news?format=json', '#tieba-content');
+        loadContent('http://api-hot.mrcuriosity.org/sites/6/news?format=json', '#tianya-content');
+        loadContent('http://api-hot.mrcuriosity.org/sites/7/news?format=json', '#hupu-content');
+        loadContent('http://api-hot.mrcuriosity.org/sites/8/news?format=json', '#github-content');
+        loadContent('http://api-hot.mrcuriosity.org/sites/9/news?format=json', '#wallstreetcn-content');
+        loadContent('http://api-hot.mrcuriosity.org/sites/10/news?format=json', '#weibo-content');
+        
+    
+        function loadContent(url, selector){
+            get(url, function(res){
+                let data = JSON.parse(res).data;
+                let content = document.querySelector(selector +" .content-list");
+                for (let i=0; i<15; i++) {
+                    let item = document.createElement("div");
+                    item.setAttribute("class", "content-item");
+                    let a = document.createElement("a");
+                    a.setAttribute("href", data[i].url);
+                    a.innerHTML =i+1 +"、"+ data[i].title;
+                    let icon = document.createElement("img");
+                    id = selector+i+1;
+                    icon.setAttribute("id", id);
+                    icon.setAttribute("class", "icon")
+                    icon.setAttribute("src", "https://s2.ax1x.com/2019/09/12/nDlf2Q.png");
+                    icon.setAttribute("onclick", "star('"+id+"')");
+                    item.appendChild(a);
+                    item.appendChild(icon);
+                    content.appendChild(item);
+                }
+            },function(){
+                alter("服务器请求失败");
+            });
+        }
+
+        function star(id){
+            var obj = document.getElementById(id);
+            obj.setAttribute("src", "https://s2.ax1x.com/2019/09/12/nDl7V0.png");
+        }
+
+        /**
+        * 一个简单的异步get请求
+        * @param {String}   url     请求地址,文件名
+        * @param {Function} fnSucc  请求成功时执行的函数,形参为为获取的字符串值.
+        * @param {Function} fnFaild 请求失败执行的函数,可选参数
+        */
+        function get(url, fnSucc, fnFaild) {
+            //1.创建ajax对象
+            let oAjax = null
+                //此处必须需要使用window.的方式,表示为window对象的一个属性.不存在是值为undefined,进入else/若直接使用XMLHttpRequest在不支持的情况下会报错
+            if (window.XMLHttpRequest) {
+                oAjax = new XMLHttpRequest();
+            } else {
+                //IE6以上,现在应该不需要考虑IE6了
+                oAjax = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            //2.连接服务器
+            //open(方法,url,是否异步)
+            oAjax.open("GET", url, true);
+            //3.发送请求
+            oAjax.send();
+            //4.接收返回
+            //OnRedayStateChange事件
+            oAjax.onreadystatechange = function () {
+                if (oAjax.readyState === 4) {
+                    if (oAjax.status === 200) {
+                        fnSucc(oAjax.responseText);
+                    } else {
+                        if (fnFaild) {
+                            fnFaild();
+                        }
+                    }
+                }
+            };
+        }
+
+    </script>
+</html>
