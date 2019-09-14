@@ -168,6 +168,7 @@
                     item.setAttribute("class", "content-item");
                     let a = document.createElement("a");
                     a.setAttribute("href", data[i].url);
+                    a.setAttribute("target", "_blank");
                     a.innerHTML =i+1 +"、"+ data[i].title;
                     let icon = document.createElement("img");
                     id = selector+i+1;
