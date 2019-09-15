@@ -162,7 +162,7 @@
         function loadContent(url, selector){
             get(url, function(res){
                 let data = JSON.parse(res).data;
-                let content = document.querySelector(selector +" .content-list");
+                let content = document.querySelec/*  */tor(selector +" .content-list");
                 for (let i=0; i<15; i++) {
                     let item = document.createElement("div");
                     item.setAttribute("class", "content-item");
