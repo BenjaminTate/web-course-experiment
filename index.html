@@ -2,8 +2,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+		<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
         <title>今日热榜</title>
-        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="style/index.css">
     </head>
     <body>
         <header>
@@ -38,6 +40,7 @@
                                 <div id="zhihu-content" class="content">
                                     <div class="content-list"></div>
                                 </div>
+                                <img class="load" src="img/loading.gif" alt="">
                                 <!-- <img src="https://file.ipadown.com/tophub/assets/images/media/zhihu.com.png" width="300px" height="300px" alt=""> -->
                             </div>
                             <div class="carousel-item">
@@ -90,15 +93,50 @@
         <footer>
             <div>本站所有数据来源于<a href="http://hot.mrcuriosity.org"><span>今日热榜</span></a>,如有侵权，请点击右上角反馈</div>
         </footer>
+        <div id="mock"></div>
+        <div class="dialog">
+            <div class="dialog-header">
+                <img src="img/tip.png" width="60px" height="70px" alt=""><span>Tips!</span>
+            </div>
+            <div class="dialog-body">
+                <div class="dialog-content">1、在进入本网站前，这里作者有一些小提示请仔细看好咯！</div>
+                <div class="dialog-content">2、进入主页面后网站会开始首次加载内容，会看到一个缓冲图标（虽然缓冲是假的，但是也得做一个，不然会以为网站很low）</div>
+                <div class="dialog-content">3、网站加载完后，若鼠标不在中间内容区，将会每5秒切换一个内容区，鼠标移入则停止切换，移出后等待5秒继续切换</div>
+                <div class="dialog-content">4、注意到上面有一栏菜单了吗，那些也是可以点击的，点击后可以任意切换内容区域</div>
+                <div class="dialog-content">5、有没有看到内容区的点赞图标，可以给每个喜欢的话题点赞哦（虽然刷新就没了，因为我不想写了）</div>
+                <div class="dialog-content">6、最后，如果还有什么问题的话，请点击右上角反馈哦（其实进去了也反馈不了）</div>
+            </div>
+            <div class="dialog-footer">
+                <div class="button btn-left left" onclick="closeTips()">跳过</div>
+                <div class="button btn-right right" onclick="nextTip()">下一条</div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
     </body>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
     <script>
-        let carousel = document.querySelector("#carousel");
-        let carouselItem = document.querySelectorAll(".carousel-item");
-        carouselItem[0].style.opacity = "1";
-        let aLi = document.querySelectorAll(".main-bar li");
-        let timer = setInterval("Time()",5000);/*调用定时器*/
+        /*设置全局数据*/
+        let carousel = document.querySelector("#carousel"); /*轮播div*/
+        let carouselItem = document.querySelectorAll(".carousel-item"); /*轮播item元素集*/
+        let aLi = document.querySelectorAll(".main-bar li"); /*菜单栏元素集*/
+        let timer;/*设置全局定时器*/
+        let apis = ["http://api-hot.mrcuriosity.org/sites/2/news?format=json",
+                    "http://api-hot.mrcuriosity.org/sites/3/news?format=json",
+                    "http://api-hot.mrcuriosity.org/sites/4/news?format=json",
+                    "http://api-hot.mrcuriosity.org/sites/6/news?format=json",
+                    "http://api-hot.mrcuriosity.org/sites/7/news?format=json",
+                    "http://api-hot.mrcuriosity.org/sites/8/news?format=json",
+                    "http://api-hot.mrcuriosity.org/sites/9/news?format=json",
+                    "http://api-hot.mrcuriosity.org/sites/10/news?format=json"];
+        let selectors = ["#zhihu-content",
+                         "#v2ex-content",
+                         "#tieba-content",
+                         "#tianya-content",
+                         "#hupu-content",
+                         "#github-content",
+                         "#wallstreetcn-content",
+                         "#weibo-content"];
 
+        /*内容轮播区域进行初始化*/
         carouselItem[0].style.opacity = "1";
         carouselItem[0].style.zIndex = 999;
         aLi[0].className = "active";
@@ -139,8 +177,8 @@
                 num = -1;
             }         
         }
-        // clearInterval(timer);
         
+        /*鼠标移入内容区，内容轮播将停止，移出5秒后回复轮播*/
         carousel.onmouseover = function(){/*鼠标引入，清除定时器，轮播图停止*/
             clearInterval(timer);
         };
@@ -149,14 +187,19 @@
             timer = setInterval("Time()",5000);
         };
 
-        loadContent('http://api-hot.mrcuriosity.org/sites/2/news?format=json', '#zhihu-content');
-        loadContent('http://api-hot.mrcuriosity.org/sites/3/news?format=json', '#v2ex-content');
-        loadContent('http://api-hot.mrcuriosity.org/sites/4/news?format=json', '#tieba-content');
-        loadContent('http://api-hot.mrcuriosity.org/sites/6/news?format=json', '#tianya-content');
-        loadContent('http://api-hot.mrcuriosity.org/sites/7/news?format=json', '#hupu-content');
-        loadContent('http://api-hot.mrcuriosity.org/sites/8/news?format=json', '#github-content');
-        loadContent('http://api-hot.mrcuriosity.org/sites/9/news?format=json', '#wallstreetcn-content');
-        loadContent('http://api-hot.mrcuriosity.org/sites/10/news?format=json', '#weibo-content');
+        preLoad();
+
+        function preLoad(){
+            setTimeout(function(){
+                let carouselItems = document.querySelector(".carousel-item");
+                let loadGif = document.querySelector(".carousel-item img");
+                carouselItems.removeChild(loadGif);
+                for(let i=0; i<apis.length; i++){
+                    loadContent(apis[i], selectors[i]);
+                }
+            }, 1000);
+            timer = setInterval("Time()",5000);
+        }
         
     
         function loadContent(url, selector){
@@ -174,7 +217,7 @@
                     id = selector+i+1;
                     icon.setAttribute("id", id);
                     icon.setAttribute("class", "icon")
-                    icon.setAttribute("src", "https://s2.ax1x.com/2019/09/12/nDlf2Q.png");
+                    icon.setAttribute("src", "img/star.png");
                     icon.setAttribute("onclick", "star('"+id+"')");
                     item.appendChild(a);
                     item.appendChild(icon);
@@ -185,9 +228,34 @@
             });
         }
 
+        /*点赞*/
         function star(id){
             var obj = document.getElementById(id);
-            obj.setAttribute("src", "https://s2.ax1x.com/2019/09/12/nDl7V0.png");
+            obj.setAttribute("src", "img/stared.png");
+        }
+
+        /*
+        * 网站提示
+        */
+        let tipIndex = 0;
+        let dialogContent = document.querySelector(".dialog-content");
+        dialogContent.style.display = "block";
+        function nextTip(){
+            let dialogContents = document.querySelectorAll(".dialog-content");
+            dialogContents[tipIndex].style.display = "none";
+            dialogContents[++tipIndex].style.display = "block";
+            if (tipIndex==dialogContents.length-1){
+                let btnRight = document.querySelector(".btn-right");
+                btnRight.innerHTML = "没有了！";
+                btnRight.style.pointerEvents = "none";
+            }
+        }
+        function closeTips(){
+            let btnLeft = document.querySelector(".btn-left");
+            let mock = document.querySelector("#mock");
+            let dialog = document.querySelector(".dialog");
+            mock.style.display = "none";
+            dialog.style.display = "none";
         }
 
         /**

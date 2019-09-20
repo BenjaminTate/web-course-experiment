@@ -21,7 +21,7 @@ img{max-width:100%;}
 /*end reset*/
 body{
     font-family: 'Open Sans', sans-serif;
-    background: url(banner.jpg) no-repeat 0px 0px;
+    background: url(../img/banner.jpg) no-repeat 0px 0px;
     background-size:cover;
     
 }
