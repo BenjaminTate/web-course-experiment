@@ -1,15 +1,7 @@
-/*--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
---*/
-/* reset */
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,nav ul,nav li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
-article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section {display: block;}
+html,body,div,span{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
+footer, header {display: block;}
 ol,ul{list-style:none;margin:0px;padding:0px;}
 blockquote,q{quotes:none;}
-blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
 table{border-collapse:collapse;border-spacing:0;}
 /* start editing from here */
 a{text-decoration:none;}
@@ -21,17 +13,17 @@ a{text-decoration:none;}
 .clear{clear:both;}/* clear float */
 .pos-relative{position:relative;}/* Position Relative */
 .pos-absolute{position:absolute;}/* Position Absolute */
-.vertical-base{	vertical-align:baseline;}/* vertical align baseline */
-.vertical-top{	vertical-align:top;}/* vertical align top */
-nav.vertical ul li{	display:block;}/* vertical menu */
-nav.horizontal ul li{	display: inline-block;}/* horizontal menu */
+.vertical-base{ vertical-align:baseline;}/* vertical align baseline */
+.vertical-top{  vertical-align:top;}/* vertical align top */
+nav.vertical ul li{ display:block;}/* vertical menu */
+nav.horizontal ul li{   display: inline-block;}/* horizontal menu */
 img{max-width:100%;}
 /*end reset*/
 body{
-	font-family: 'Open Sans', sans-serif;
-	background: url(https://s2.ax1x.com/2019/09/12/nDlb5T.jpg) no-repeat 0px 0px;
-	background-size:cover;
-	
+    font-family: 'Open Sans', sans-serif;
+    background: url(banner.jpg) no-repeat 0px 0px;
+    background-size:cover;
+    
 }
 .header {
     text-align: center;
@@ -41,7 +33,7 @@ body{
     font-size: 3em;
     color: #fff;
     font-weight: 400;
-	font-family: 'Candal', sans-serif;
+    font-family: 'Candal', sans-serif;
 }
 .contact{
     margin: 4em auto 0;
@@ -49,7 +41,7 @@ body{
     -webkit-appearance: none;
     background-color: rgba(7, 6, 11, 0.63);
     padding: 2em;
-	border-radius:3px;
+    border-radius:3px;
 }
 .contact input[type="text"], .contact textarea {
     width: 96%;
@@ -74,12 +66,12 @@ body{
 }
 .contact-left {
     float: left;
-	width: 45%;
+    width: 45%;
     margin-right: 5%;
 }
 .contact-rightl {
     float: left;
-	width: 48%;
+    width: 48%;
 }
 .contact textarea {
     resize: none;
@@ -88,9 +80,9 @@ body{
 .contact label {
     font-size: 0.95em !important;
     color: #fff !important;
-	margin-bottom: 8px;
-	display: block;
-	font-weight: 600;
+    margin-bottom: 8px;
+    display: block;
+    font-weight: 600;
 }
 .contact input[type="submit"] {
     font-size: 1em;
@@ -102,21 +94,21 @@ body{
     color: #fff;
     border: none;
     width: 100%;
-	cursor: pointer;
+    cursor: pointer;
     transition: 0.5s all;
     -webkit-transition: 0.5s all;
     -moz-transition: 0.5s all;
     -o-transition: 0.5s all;
     -ms-transition: 0.5s all;
-	border-radius: 3px;
+    border-radius: 3px;
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
     -o-border-radius: 3px;
-	 font-family: 'Open Sans', sans-serif;
+     font-family: 'Open Sans', sans-serif;
 }
 .contact input[type="submit"]:hover{
-	   background: #fff;
-	   color:#000;
+       background: #fff;
+       color:#000;
 }
 .footer-agile {
     text-align: center;
@@ -126,154 +118,8 @@ body{
     font-size: .9em;
     color: #fff;
     margin: 0px;
-	line-height:1.8em
+    line-height:1.8em
 }
 .footer-agile p a {
     color: #fff;
-}
-/**responsive**/
-@media(max-width:1440px){
-	
-}
-@media(max-width:1366px){
-.contact {
-    width: 32%;	
-}
-}
-@media(max-width:1280px){
-.contact {
-    width: 35%;	
-}
-}
-@media(max-width:1080px){
-.contact {
-    width: 40%;
-}
-.header h1 {
-    font-size: 2.8em;	
-}
-@media(max-width:991px){
-.contact {
-    width: 43%;
-}
-	
-}
-@media(max-width:800px){
-.contact-right {
-    float: left;
-    width: 45%;
-    margin-right: 7%;
-}
-.contact-rightl {
-    float: left;
-    width: 45%;
-}
-.contact input[type="text"], .contact textarea {
-    width: 94%;	
-}
-.contact {
-    width: 50%;
-}
-}
-@media(max-width:768px){
-.contact {
-    width: 52%;
-}	
-}
-@media(max-width:736px){
-.contact {
-    width: 55%;
-	margin: 3em auto 0;
-}
-.header {
-    margin-top: 3em;
-}
-.header h1 {
-    font-size: 2.5em;
-}	
-}
-@media(max-width:667px){
-.contact {
-    width: 57%;
-}	
-}
-@media(max-width:640px){
-	
-}
-@media(max-width:600px){
-.contact {
-    width: 63%;
-}
-.footer-agile {
-    padding: 2em 0;
-}	
-}
-@media(max-width:568px){
-.contact {
-    width: 65%;
-}	
-}
-@media(max-width:480px){
-.header h1 {
-    font-size: 2.3em;
-}
-.contact {
-    width: 74%;
-}
-.contact-left {
-    float: left;
-    width: 100%;
-    margin-right: 0;
-}	
-.contact-rightl {
-    float: left;
-    width: 100%;
-    margin-right: 0;
-    margin-top: .5em;
-}
-.contact input[type="text"], .contact textarea {
-    padding: 0.6em;
-    font-size: 0.9em;	
-}
-.contact textarea {
-    resize: none;
-    height: 130px;
-}
-}
-@media(max-width:414px){
-.header h1 {
-    font-size: 1.8em;
-}
-.contact label {
-    font-size: 0.9em !important;
-}
-.contact input[type="submit"] {
-    font-size: 0.95em;
-}
-@media(max-width:384px){
-.contact {
-    width: 80%;
-    padding: 1em;
-	margin: 2em auto 0;
-}
-.header {
-    margin-top: 2em;
-}
-.contact input[type="submit"] {
-    padding: 0.7em;	
-}
-@media(max-width:375px){
-	
-}
-@media(max-width:320px){
-.header h1 {
-    font-size: 1.5em;
-}
-.contact input[type="submit"] {
-    padding: 0.7em;
-    font-size: 0.8em;
-}
-.footer-agile p {
-    font-size: .85em;	
-}
 }
