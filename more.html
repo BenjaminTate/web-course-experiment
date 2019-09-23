@@ -1,0 +1,235 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style/common.css">
+    <title>更多热榜</title>
+    <style>
+        header{ 
+            width: 100%;
+            height: 52px;
+            margin: 0 auto;
+            background-color: #F5F5F5;
+        }
+        .header{
+            width: 80%;
+            height: 52px;
+            margin: 0 auto;
+            background-color: #F5F5F5;
+        }
+        .header .logo{
+            width: 144px;
+            height: 52px;
+        }
+        .header .logo img{
+            max-width: 100%;
+            height: auto;
+            margin-top: 5px;
+            padding: .5rem 1rem;
+        }
+        .header .menu{
+            font-size: 14px;
+            line-height: 2.5rem;
+            margin-top: 5px;
+            color: #E5E3E6;
+        }
+        .main{
+            width: 700px;
+            height: 560px;
+            margin: 0 auto;
+            overflow: hidden;
+            background-color: #F5F5F5;
+        }
+        .main-body{
+            width: 100%;
+            height: auto;
+            padding-top: 1rem;
+            background-color: #F5F5F5
+        }
+        .solitaire{
+            position: relative;
+            width: 700px;
+            height: 100px;
+        }
+        .solitaire-row{
+            position: relative;
+            height: 100px;
+            margin-bottom: 10px;
+            /* overflow: hidden; */
+            margin-left: 0px;
+        }
+        .solitaire .solitaire-row .row-img{
+            width: 100px;
+            height: 100px;
+            margin-left: 15px;
+            margin-bottom: 10px;
+            border-radius: 50%;
+            float: left;
+        }
+        .blink{
+            animation: blinking 3s;
+        }
+        .solitaire .solitaire-row .row-img:first-child{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            float: left;
+        }
+        .solitaire .solitaire-row .row-img img{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: block;
+        }
+        footer div{
+            text-align: center;
+            font-size: 16px;
+        }
+        footer div span{
+            color: red;
+            font-weight: bolder;
+        }
+        @keyframes blinking{
+            from {width: 100px ;height: 100px; visibility: visible;}
+            to {width: 100px; height: 100px; visibility: hidden;}
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div class="logo left">
+                <img src="http://hot.mrcuriosity.org/static/media/logo.3aef62c0.svg" alt="logo" title="今日热榜">
+            </div>
+            <div class="menu right">
+                <a href="javascript: history.go(-1)">回到首页</a>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
+    <div class="main">
+        <div class="main-body">
+            <div class="solitaire">
+                <!-- <div class="solitaire-row">
+                    
+                </div> -->
+                
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div>
+            <p>本站页面图片数据来源于<a href="https://tophub.today/"><span>今日热榜</span></a></p>
+        </div>
+    </footer>
+</body>
+<script>
+    const imgAdresses = {"知乎":"https://file.ipadown.com/tophub/assets/images/media/zhihu.com.png",
+                       "微博":"https://file.ipadown.com/tophub/assets/images/media/s.weibo.com.png",
+                       "微信":"https://file.ipadown.com/tophub/assets/images/media/mp.weixin.qq.com.png",
+                       "澎湃新闻":"https://file.ipadown.com/tophub/assets/images/media/thepaper.cn.png",
+                       "吾爱破解":"https://file.ipadown.com/tophub/assets/images/media/52pojie.cn.png",
+                       "百度实时热点":"https://file.ipadown.com/tophub/assets/images/media/baidu.com.png",
+                       "好奇心日报":"https://file.ipadown.com/tophub/assets/images/media/qdaily.com.png",
+                       "淘宝Top100":"https://file.ipadown.com/tophub/assets/images/media/taobao.com.png",
+                       "拼多多限时秒杀":"https://file.ipadown.com/tophub/assets/images/media/p.pinduoduo.com.png",
+                       "36氪":"https://file.ipadown.com/tophub/assets/images/media/36kr.com.png",
+                       "少数派":"https://file.ipadown.com/tophub/assets/images/media/sspai.com.png",
+                       "虎嗅网":"https://file.ipadown.com/tophub/assets/images/media/huxiu.com.png",
+                       "IT之家":"https://file.ipadown.com/tophub/assets/images/media/ithome.com.png",
+                       "哔哩哔哩":"https://file.ipadown.com/tophub/assets/images/media/bilibili.com.png",
+                       "抖音":"https://file.ipadown.com/tophub/assets/images/media/iesdouyin.com.png",
+                       "煎蛋":"https://file.ipadown.com/tophub/assets/images/media/jandan.net.png",
+                       "豆瓣电影":"https://file.ipadown.com/tophub/assets/images/media/movie.douban.com.png",
+                       "V2EX":"https://file.ipadown.com/tophub/assets/images/media/v2ex.com.png",
+                       "天涯":"https://file.ipadown.com/tophub/assets/images/media/bbs.tianya.cn.png",
+                       "小红书":"https://file.ipadown.com/tophub/assets/images/media/xiaohongshu.com.png",
+                       "水木社区":"https://file.ipadown.com/tophub/assets/images/media/newsmth.net.png",
+                       "北大未名":"https://file.ipadown.com/tophub/assets/images/media/bbs.pku.edu.cn.png",
+                       "武大珞珈山水":"https://file.ipadown.com/tophub/assets/images/media/bbs.whu.edu.cn.png",
+                       "北师蛋蛋":"https://file.ipadown.com/tophub/assets/images/media/oiegg.com.png",
+                       "开眼视频":"https://file.ipadown.com/tophub/assets/images/media/kaiyanapp.com.png",
+                       "汽车之家":"https://file.ipadown.com/tophub/assets/images/media/club.autohome.com.cn.png",
+                       "高楼迷":"https://file.ipadown.com/tophub/assets/images/media/gaoloumi.cc.png",
+                       "宽带山":"https://file.ipadown.com/tophub/assets/images/media/kdslife.com.png",
+                       "什么值得买":"https://file.ipadown.com/tophub/assets/images/media/smzdm.com.png",
+                       "推特":"https://file.ipadown.com/tophub/assets/images/media/twitter.com.png"}; 
+    
+    /* Object转Map
+    */
+    const map = (obj) => {
+        let map = new Map();
+        for(let key in obj) {
+            map.set(key,obj[key]);
+        }
+        return map;
+    }
+    let addressesMap = map(imgAdresses);
+    
+    initSolitaire();
+
+    function initSolitaire(){
+        let solitaire = document.querySelector(".solitaire");
+        let imgSize = addressesMap.size;
+        let rows = Math.round(addressesMap.size /6) ;
+        // for (let i=0; i<rows; i++){
+        //     let solitaireRow = row();
+        //     solitaireRow.style.width = imgSize*115 +"px";
+        //     solitaireRow.style.marginLeft = i*-690+"px";
+        //     solitaire.appendChild(solitaireRow);
+        //     let clearfix = document.createElement("div");
+        //     clearfix.setAttribute("class", "clearfix");
+        //     solitaire.appendChild(clearfix);
+        // }
+        let solitaireRow = row();
+        // solitaireRow.style.width = imgSize*115 +"px";
+        solitaireRow.style.marginLeft = 0 +"px";
+        solitaire.appendChild(solitaireRow);
+    }
+    function row(){
+        let solitaireRow = document.createElement("div")
+        solitaireRow.setAttribute("class", "solitaire-row"); 
+        addressesMap.forEach(function(value, key){
+            let rowImg = document.createElement("div");
+            rowImg.setAttribute("class", "row-img");
+            let img = document.createElement("img");
+            img.setAttribute("src", value);
+            img.setAttribute("alt", key);
+            rowImg.appendChild(img);
+            solitaireRow.appendChild(rowImg);
+        });
+        return solitaireRow;
+    }
+
+    //let timer = setInterval("scroll()", 50);
+    // function scroll(obj){
+    //     let solitaireRow = document.querySelector(".solitaire-row");
+    //     let left = getPx(solitaireRow.style.marginLeft)-5;
+    //     solitaireRow.style.marginLeft  = left +"px"
+
+    //     if (left==-2645){
+    //         // clearInterval(timer);
+    //         solitaireRow.style.marginLeft  = 0 +"px"
+    //     }
+    //     // let solitaireRows = document.querySelectorAll(".solitaire-row");
+    //     // for(let i=0; i<solitaireRows.length; i++){
+    //     //     let left = getPx(solitaireRows[i].style.marginLeft)-50;
+    //     //     solitaireRows[i].style.marginLeft  = left +"px"
+    //     // }
+    // }
+    setInterval("blink()", 500);
+    function blink(){
+        let imgs = document.querySelectorAll(".solitaire-row .row-img img");
+        let random = Math.floor(Math.random()*imgs.length);
+        imgs[random].style.visibility = "hidden";
+        setTimeout(function(){
+            imgs[random].style.visibility = "visible";
+        }, 200);
+    }
+
+    function getPx(px){
+        return parseInt(px.substring(0, px.indexOf("px")));
+    }
+</script>
+</html>
