@@ -5,6 +5,7 @@
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style/common.css">
     <title>更多热榜</title>
+    <base target="_blank" />
     <style>
         header{ 
             width: 100%;
@@ -35,8 +36,8 @@
             color: #E5E3E6;
         }
         .main{
-            width: 700px;
-            height: 560px;
+            width: 815px;
+            height: auto;
             margin: 0 auto;
             overflow: hidden;
             background-color: #F5F5F5;
@@ -49,7 +50,6 @@
         }
         .solitaire{
             position: relative;
-            width: 700px;
             height: 100px;
         }
         .solitaire-row{
@@ -82,17 +82,63 @@
             border-radius: 50%;
             display: block;
         }
-        footer div{
-            text-align: center;
-            font-size: 16px;
-        }
-        footer div span{
-            color: red;
-            font-weight: bolder;
-        }
         @keyframes blinking{
             from {width: 100px ;height: 100px; visibility: visible;}
             to {width: 100px; height: 100px; visibility: hidden;}
+        }
+        .main-content{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+        .content{
+            width: 258px;
+            height: 300px;
+            flex: auto;
+            background-color: #ffffff;
+            margin-right: 10px;
+            padding-left: 5px;
+            padding-right: 5px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .content:first-child{
+            margin-left: 10px;
+        }
+        .content-bar{
+            width: 100%;
+            height: 40px;
+            font-size: 20px;
+            border-bottom: 1px solid gray;
+            padding-left: 10px;
+            line-height: 34px;
+        }
+        .content-bar span{
+            float: right;
+            cursor: pointer;
+        }
+        .content-body{
+            height: 100%;
+            overflow-y: scroll;
+            font-size: 14px;
+            padding: 0px 2px;
+        }
+        .content-body::-webkit-scrollbar {
+            /*隐藏滚轮*/
+            display: none;
+        }
+        .body-item a:hover{
+            color: lightseagreen;
+        }
+        .loadmore{
+            text-align: center;
+            font-size: 16px;
+            margin: 5px 0;
+        }
+        .loadmore span{
+            cursor: pointer;
         }
     </style>
 </head>
@@ -111,13 +157,224 @@
     <div class="main">
         <div class="main-body">
             <div class="solitaire">
-                <!-- <div class="solitaire-row">
-                    
-                </div> -->
-                
+            </div>
+            <div class="main-content">
+                <div class="content">
+                    <div class="content-bar">36氪 <span><a href="https://tophub.today/n/Q1Vd5Ko85R">>></a></span></div>
+                    <div class="content-body">
+                        <div class="body-item">
+                            <a href="https://www.36kr.com/p/5254197">1、李国庆和俞渝为什么没离婚</a> 
+                        </div>
+                        <div class="body-item">
+                            <a href="https://www.36kr.com/p/5254169">2、8点1氪 | 支付宝和微信支付重申禁止虚拟币交易；WeWork与印度银行谈判破裂重新寻求2亿美元融资；诺贝尔文学奖公布</a> 
+                         </div>
+                         <div class="body-item">
+                            <a href="https://www.36kr.com/p/5254262">3、最前线 | 上市半年后，“网红电商第一股”如涵在美遭集体诉讼</a> 
+                         </div>
+                         <div class="body-item">
+                            <a href="https://www.36kr.com/p/5252695">4、只要每月按时交费，就可以天天跟网红做闺蜜</a> 
+                         </div>
+                         <div class="body-item">
+                            <a href="https://www.36kr.com/p/5254195">5、网红带货简史：从电视购物到全民直播，如何成就千亿市场？</a> 
+                         </div>
+                         <div class="body-item">
+                            <a href="https://www.36kr.com/p/5254202">6、最前线丨戴森不造车了：曾投入数十亿英镑，现在想卖都没人要</a> 
+                         </div>
+                         <div class="body-item">
+                            <a href="https://www.36kr.com/p/5250939">7、一个能让你收入翻番的时间管理办法</a> 
+                         </div>
+                         <div class="body-item">
+                            <a href="https://www.36kr.com/p/5254125">8、36氪首发 | 跨境电商平台「Club Factory」完成 1 亿美元 D 轮融资，启明创投等数家海内外基金领投</a> 
+                         </div>
+                         <div class="body-item">
+                            <a href="https://www.36kr.com/p/5254108">9、36氪首发｜「i背调」获数千万人民币B1轮融资，明势资本独家投资</a> 
+                         </div>
+                         <div class="body-item">
+                            <a href="https://www.36kr.com/p/5254568">10、8点1氪 | 麦德龙拟将中国业务出售给物美；贾跃亭拟申请个人破产；Uber收购外卖公司Cornershop</a> 
+                         </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="content-bar">少数派 <span><a href="https://tophub.today/n/Y2KeDGQdNP">>></a></span></div>
+                    <div class="content-body">
+                        <div class="body-item">
+                            <a href="https://sspai.com/post/56934">1、编辑部的新玩意 | 自动猫砂盆、智能指纹锁……少数派的编辑们最近买了啥？</a> 
+                        </div>
+                        <div class="body-item">
+                            <a href="https://sspai.com/post/56837">2、功能全面还免费，它才是 iOS 需要的文件管理工具：Documents</a> 
+                        </div>
+                        <div class="body-item">
+                            <a href="https://sspai.com/post/56873">3、macOS Catalina 正式版来了，更新后先来试试这些新功能</a> 
+                        </div>
+                        <div class="body-item">
+                            <a href="https://sspai.com/post/56893">4、Docker 的入门「指北」</a> 
+                        </div>
+                        <div class="body-item">
+                            <a href="https://sspai.com/post/56888">5、一周 App 派评 | 近期值得关注的 15 款应用</a> 
+                        </div>
+                        <div class="body-item">
+                            <a href="https://sspai.com/post/56868">6、在 Kindle 上看漫画、RSS、PDF？5 个小工具帮你获得最佳体验</a> 
+                        </div>
+                        <div class="body-item">
+                            <a href="https://sspai.com/post/56879">7、如何高效写作公众号文章？</a> 
+                        </div>
+                        <div class="body-item">
+                                <a href="https://sspai.com/post/56876">8、拉近你和历史的距离：在这些彩色影像中感受共和国 70 年历史</a> 
+                        </div>
+                        <div class="body-item">
+                            <a href="https://sspai.com/post/56871">9、国庆看什么：DC 新片《猛禽小队和哈莉·奎因》正式预告，《我和我的祖国》上映   </a> 
+                        </div>
+                        <div class="body-item">
+                            <a href="https://sspai.com/post/56835">10、保护听力健康，这些朴素的小贴士就能帮你</a> 
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="content-bar">虎嗅网 <span><a href="https://tophub.today/n/5VaobgvAj1">>></a></span></div>
+                    <div class="content-body">
+                        <div class="body-item">
+                            <a href="https://www.huxiu.com/article/321087.html">1、蔚来最后的疯狂</a> 
+                        </div>
+                        <div class="body-item">
+                            <a href="https://www.huxiu.com/article/321044.html">2、疯狂的柬埔寨，亢奋的中国人</a> 
+                        </div>
+                        <div class="body-item">
+                            <a href="https://www.huxiu.com/article/321085.html">3、2019诺贝尔奖颁出，落选的残雪还是火了</a> 
+                        </div>
+                        <div class="body-item">
+                            <a href="https://www.huxiu.com/article/321074.html">4、谁送修了陈冠希的电脑</a> 
+                        </div>
+                        <div class="body-item">
+                            <a href="https://www.huxiu.com/article/321108.html">5、【虎嗅早报】网红电商如涵在美遭集体诉讼；四家中国车企否认破产传闻</a> 
+                        </div>
+                        <div class="body-item">
+                            <a href="https://www.huxiu.com/article/321105.html">6、戴森放弃造车：车好造，但卖家电更挣钱</a> 
+                        </div>
+                        <div class="body-item">
+                            <a href="https://www.huxiu.com/article/320843.html">7、中国富人：在云端与泥土之间</a> 
+                        </div>
+                        <div class="body-item">
+                            <a href="https://www.huxiu.com/article/321109.html">8、任正非：竞争对手不强，华为会衰落</a> 
+                        </div>
+                        <div class="body-item">
+                            <a href="https://www.huxiu.com/article/320917.html">9、历史演进：技术的真正差距在哪？ </a> 
+                        </div>
+                        <div class="body-item">
+                            <a href="https://www.huxiu.com/article/320932.html">10、蔡崇信的敦刻尔克时刻</a> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-content">
+                <div class="content">
+                    <div class="content-bar">小红书 <span><a href="https://tophub.today/n/L4MdA5ldxD">>></a></span></div>
+                    <div class="content-body">
+                        <div class="body-item">
+                            <a href="https://www.xiaohongshu.com/discovery/item/5d98aa610000000004022950">1、8⃣️1⃣️款高颜值手机壳💯9图不够放啊……</a> 
+                        </div>
+                        <div class="body-item">
+                            <a href="https://www.xiaohongshu.com/discovery/item/5d987b98000000000401927a">2、如何打造衣架肩</a> 
+                        </div>
+                        <div class="body-item">
+                            <a href="https://www.xiaohongshu.com/discovery/item/5d9efd9500000000010092b1">3、美式英语音标系列课程（二）</a> 
+                        </div>
+                        <div class="body-item">
+                            <a href="https://www.xiaohongshu.com/discovery/item/5d9c6ffa000000000401c34f">4、小月龄宝宝如何睡整觉✨整觉秘籍㊙️请查收</a> 
+                        </div>
+                        <div class="body-item">
+                            <a href="https://www.xiaohongshu.com/discovery/item/5d958f3b000000000401bf02">5、‼️‼️真香警告‼️‼️XR换iPhone11到底好不好❓❓</a> 
+                        </div>
+                        <div class="body-item">
+                            <a href="https://www.xiaohongshu.com/discovery/item/5d99c98b000000000401bea3">6、让爸妈看到这手机，保准你能换上新手机！！</a> 
+                        </div>
+                        <div class="body-item">
+                            <a href="https://www.xiaohongshu.com/discovery/item/5d9a9ac8000000000402266c">7、iphone11💨 💢这里插个话，评论有人要壁纸，首先这图是网上找的有点糊，</a> 
+                        </div>
+                        <div class="body-item">
+                            <a href="https://www.xiaohongshu.com/discovery/item/5d9eaa46000000000100698e">8、people和person你分得清吗？</a> 
+                        </div>
+                        <div class="body-item">
+                            <a href="https://www.xiaohongshu.com/discovery/item/5d9ef0690000000001002dd1">9、自制奶茶 匡威帆布鞋 MUJI无印良品文具便签 </a> 
+                        </div>
+                        <div class="body-item">
+                            <a href="https://www.xiaohongshu.com/discovery/item/5da055e00000000001005029">10、王一博："干嘛额"～</a> 
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="content-bar">IT之家 <span><a href="https://tophub.today/n/74Kvx59dkx">>></a></span></div>
+                    <div class="content-body">
+                        <div class="body-item">
+                            <a href="https://m.ithome.com/html/449663.htm">1、小米米家冰箱系列正式发布：两门到十字四门共四款，999元起</a> 
+                        </div>
+                        <div class="body-item">
+                            <a href="https://m.ithome.com/html/449796.htm">2、百度网盘再回应大量“退款用户”投诉超级会员取消，称“人善被人欺”</a> 
+                        </div>
+                        <div class="body-item">
+                            <a href="https://m.ithome.com/html/449662.htm">3、吉林坠落陨石，现场出现明亮火光</a> 
+                        </div>
+                        <div class="body-item">
+                            <a href="https://m.ithome.com/html/449819.htm">4、苹果iPhone 11中的U1芯片是苹果自己设计的，但与其他设备兼容</a> 
+                        </div>
+                        <div class="body-item">
+                            <a href="https://m.ithome.com/html/449777.htm">5、【IT之家评测室】三星Galaxy Note10+ 5G手机体验：值得你拥有，花掉你所有</a> 
+                        </div>
+                        <div class="body-item">
+                            <a href="https://m.ithome.com/html/449676.htm">6、DxOMARK解释iPhone 11 Pro得分迟迟不出：等Deep Fusion正式上线</a> 
+                        </div>
+                        <div class="body-item">
+                            <a href="https://m.ithome.com/html/449755.htm">7、《哪吒之魔童降世》全网正式上线</a> 
+                        </div>
+                        <div class="body-item">
+                            <a href="https://m.ithome.com/html/449678.htm">8、联想Y9000X 标压核显笔记本发布：i5+16GB+512GB，6999元</a> 
+                        </div>
+                        <div class="body-item">
+                            <a href="https://m.ithome.com/html/449794.htm">9、4499元，联想小新Pro 13新品上架：R5 3550H/16GB内存/2.5K屏幕</a> 
+                        </div>
+                        <div class="body-item">
+                            <a href="https://m.ithome.com/html/449803.htm">10、中通快递率先宣布“双十一”涨价</a> 
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="content-bar">煎蛋 <span><a href="https://tophub.today/n/NRrvWq3e5z">>></a></span></div>
+                    <div class="content-body">
+                        <div class="body-item">
+                            <a href="http://jandan.net/2019/10/11/fake-orgasms.html">1、女人为什么要假装高潮？这里采访了五位女士</a> 
+                        </div>
+                        <div class="body-item">
+                            <a href="http://jandan.net/2019/10/11/hollow-diamond.html">2、俄罗斯开采出世界首颗嵌套钻石</a> 
+                        </div>
+                        <div class="body-item">
+                            <a href="http://jandan.net/2019/10/11/40-push-ups.htmlm">3、四十个俯卧撑就能远离心脏病？</a> 
+                        </div>
+                        <div class="body-item">
+                            <a href="http://jandan.net/2019/10/11/romantic-interest.html">4、玩欲擒故纵更有可能适得其反</a> 
+                        </div>
+                        <div class="body-item">
+                            <a href="http://jandan.net/2019/10/11/quantum-supremacy.html">5、“量子霸权”的到来</a> 
+                        </div>
+                        <div class="body-item">
+                            <a href="http://jandan.net/2019/10/12/65-years.html">6、日本观光：煮了65年的关东煮老汤</a> 
+                        </div>
+                        <div class="body-item">
+                            <a href="http://jandan.net/2019/10/11/string-theory-2.html">7、弦论和诺贝尔物理学奖赌局</a> 
+                        </div>
+                        <div class="body-item">
+                            <a href="http://jandan.net/2019/10/11/brain-stimulation.html">8、深部脑刺激可改善严重抑郁</a> 
+                        </div>
+                        <div class="body-item">
+                            <a href="http://jandan.net/2019/10/12/forced-to-issue.html">9、猛虎落泪：男子因在婚礼上哭泣被迫谢罪</a> 
+                        </div>
+                        <div class="body-item">
+                            <a href="http://jandan.net/2019/10/11/wellness-shirt.html">10、创意众筹：西班牙养生衬衫</a> 
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+    <div class="loadmore"><span>点击加载更多<img width="19px" height="19px" src="img/loading.gif" alt=""></sapn></div>
     <footer>
         <div>
             <p>本站页面图片数据来源于<a href="https://tophub.today/"><span>今日热榜</span></a></p>
@@ -168,10 +425,11 @@
     let addressesMap = map(imgAdresses);
     
     initSolitaire();
+    appendRow();
 
     function initSolitaire(){
         let solitaire = document.querySelector(".solitaire");
-        let imgSize = addressesMap.size;
+        let imgCount = addressesMap.size;
         let rows = Math.round(addressesMap.size /6) ;
         // for (let i=0; i<rows; i++){
         //     let solitaireRow = row();
@@ -183,9 +441,23 @@
         //     solitaire.appendChild(clearfix);
         // }
         let solitaireRow = row();
-        // solitaireRow.style.width = imgSize*115 +"px";
+        solitaireRow.style.width = (imgCount+7)*115 +"px";
         solitaireRow.style.marginLeft = 0 +"px";
         solitaire.appendChild(solitaireRow);
+    }
+    function appendRow(){
+        let rowImgs = document.querySelectorAll(".row-img img");
+        let solitaireRow = document.querySelector(".solitaire-row");
+        for (let i = 0; i < 7; ++i) {
+            let rowImg = document.createElement("div");
+            rowImg.setAttribute("class", "row-img");
+            let img = document.createElement("img");
+            console.log(rowImgs[i].getAttribute("src"));
+            img.setAttribute("src", rowImgs[i].getAttribute("src"));
+            img.setAttribute("alt", rowImgs[i].getAttribute("alt"));
+            rowImg.appendChild(img);
+            solitaireRow.appendChild(rowImg);
+        }
     }
     function row(){
         let solitaireRow = document.createElement("div")
@@ -202,22 +474,31 @@
         return solitaireRow;
     }
 
-    //let timer = setInterval("scroll()", 50);
-    // function scroll(obj){
-    //     let solitaireRow = document.querySelector(".solitaire-row");
-    //     let left = getPx(solitaireRow.style.marginLeft)-5;
-    //     solitaireRow.style.marginLeft  = left +"px"
+    let timer = setInterval("scroll()", 50);
+    function scroll(obj){
+        let solitaireRow = document.querySelector(".solitaire-row");
+        let left = getPx(solitaireRow.style.marginLeft)-5;
+        solitaireRow.style.marginLeft  = left +"px"
 
-    //     if (left==-2645){
-    //         // clearInterval(timer);
-    //         solitaireRow.style.marginLeft  = 0 +"px"
-    //     }
-    //     // let solitaireRows = document.querySelectorAll(".solitaire-row");
-    //     // for(let i=0; i<solitaireRows.length; i++){
-    //     //     let left = getPx(solitaireRows[i].style.marginLeft)-50;
-    //     //     solitaireRows[i].style.marginLeft  = left +"px"
-    //     // }
-    // }
+        if (left==-3450){
+            // clearInterval(timer);
+            solitaireRow.style.marginLeft  = 0 +"px"
+        }
+        // let solitaireRows = document.querySelectorAll(".solitaire-row");
+        // for(let i=0; i<solitaireRows.length; i++){
+        //     let left = getPx(solitaireRows[i].style.marginLeft)-50;
+        //     solitaireRows[i].style.marginLeft  = left +"px"
+        // }
+    }
+    /*鼠标移入内容区，内容轮播将停止，移出5秒后回复轮播*/
+    let solitaire = document.querySelector(".solitaire");
+    solitaire.onmouseover = function(){/*鼠标引入，清除定时器，轮播图停止*/
+            clearInterval(timer);
+        };
+    solitaire.onmouseout = function(){/*鼠标移出，重新调用定时器，轮播图开始*/
+        clearInterval(timer);
+        timer = setInterval("scroll()", 50);
+    };
     setInterval("blink()", 500);
     function blink(){
         let imgs = document.querySelectorAll(".solitaire-row .row-img img");

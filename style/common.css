@@ -13,7 +13,6 @@ html,body{
     background:#E5E3E6; 
     font:12px/22px Verdana,Arial,sans-serif,"Times New Roman",微软雅黑,思源宋体; 
     width:100%;
-    /* overflow: hidden; */
 }
 input,select,button{ 
      font-size:100%;
@@ -43,7 +42,7 @@ a:hover{
     color:#000; 
     text-decoration: none;
 }
-/* 标签属性，textarea,input 强制输入时内容超出时换行，打断 */
+/* 标签属性，textarea,input 强制输入时内容超出时换行，打�? */
 textarea,input{ 
     word-wrap:break-word; 
     word-break:break-all; 
@@ -54,3 +53,14 @@ span,p,div{
 .left{ float:left; }
 .right{ float:right; }
 .clearfix{ content: ''; display: block; clear: both; }
+footer{
+    margin: 10px auto;
+}
+footer div{
+    text-align: center;
+    font-size: 16px;
+}
+footer div span{
+    color: red;
+    font-weight: bolder;
+}

@@ -94,7 +94,6 @@ header{
 }
 .carousel .wrap .carousel-item {
     position:absolute;
-    top:0;
     width:100%;
     height:100%;
     opacity:0;
@@ -103,14 +102,7 @@ header{
 .carousel-item .load{
     padding: 50% 50%;
 }
-footer div{
-    text-align: center;
-    font-size: 16px;
-}
-footer div span{
-    color: red;
-    font-weight: bolder;
-}
+
 #mask{
     width: 100%;
     height: 100%;
