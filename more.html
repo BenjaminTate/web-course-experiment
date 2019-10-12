@@ -36,7 +36,7 @@
             color: #E5E3E6;
         }
         .main{
-            width: 815px;
+            width: 85%;
             height: auto;
             margin: 0 auto;
             overflow: hidden;
@@ -95,7 +95,7 @@
         }
         .content{
             width: 258px;
-            height: 300px;
+            height: 370px;
             flex: auto;
             background-color: #ffffff;
             margin-right: 10px;
@@ -120,7 +120,7 @@
             cursor: pointer;
         }
         .content-body{
-            height: 100%;
+            height: 300px;
             overflow-y: scroll;
             font-size: 14px;
             padding: 0px 2px;
@@ -441,14 +441,14 @@
         //     solitaire.appendChild(clearfix);
         // }
         let solitaireRow = row();
-        solitaireRow.style.width = (imgCount+7)*115 +"px";
+        solitaireRow.style.width = (imgCount+10)*115 +"px";
         solitaireRow.style.marginLeft = 0 +"px";
         solitaire.appendChild(solitaireRow);
     }
     function appendRow(){
         let rowImgs = document.querySelectorAll(".row-img img");
         let solitaireRow = document.querySelector(".solitaire-row");
-        for (let i = 0; i < 7; ++i) {
+        for (let i = 0; i < 9; ++i) {
             let rowImg = document.createElement("div");
             rowImg.setAttribute("class", "row-img");
             let img = document.createElement("img");
