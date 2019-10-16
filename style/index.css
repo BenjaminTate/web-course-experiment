@@ -32,6 +32,18 @@ header{
     margin-top: 5px;
     color: #E5E3E6;
 }
+.header .menu span{
+    color: black;
+    cursor: pointer;
+}
+.header .menu span:after{
+    content: " |";
+    display: inline;
+    color: lightgray;
+}
+.header .menu span:hover{
+    color: lightskyblue;
+}
 .header .menu a:after{
     content: ">>";
     display: inline;

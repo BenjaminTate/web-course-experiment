@@ -35,6 +35,21 @@
             margin-top: 5px;
             color: #E5E3E6;
         }
+        .header .menu span{
+            color: black;
+            cursor: pointer;
+        }
+        .header .menu span:after{
+            content: " |";
+            display: inline;
+            color: lightgray;
+        }
+        .header .menu span:hover{
+            color: lightskyblue;
+        }
+        .header .menu a:hover{
+            color: lightskyblue;
+        }
         .main{
             width: 85%;
             height: auto;
@@ -81,6 +96,7 @@
             height: 100px;
             border-radius: 50%;
             display: block;
+            cursor: pointer;
         }
         @keyframes blinking{
             from {width: 100px ;height: 100px; visibility: visible;}
@@ -159,7 +175,8 @@
                 <img src="http://hot.mrcuriosity.org/static/media/logo.3aef62c0.svg" alt="logo" title="今日热榜">
             </div>
             <div class="menu right">
-                <a href="javascript: history.go(-1)">回到首页</a>
+                <span>手机端查看</span>
+                <a href="javascript: history.go(-1)" target="_self">回到首页</a>
             </div>
         </div>
         <div class="clearfix"></div>
@@ -478,6 +495,7 @@
             let img = document.createElement("img");
             img.setAttribute("src", value);
             img.setAttribute("alt", key);
+            img.setAttribute("title", key);
             rowImg.appendChild(img);
             solitaireRow.appendChild(rowImg);
         });
