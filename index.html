@@ -26,67 +26,46 @@
             <div class="main-body">
                 <div class="main-bar">
                     <ul>
-                        <li>知乎</li>
-                        <li>v2ex</li>
-                        <li>微博</li>
+                        <li>V2EX</li>
                         <li>贴吧</li>
-                        <li>天涯</li>
+                        <li>豆瓣</li>
                         <li>虎扑</li>
                         <li>Github</li>
-                        <li>华尔街见闻</li>
                     </ul>
                 </div>
                 <div id="carousel" class="carousel">
                     <div class="wrap">
-                            <div class="carousel-item">
-                                <div id="zhihu-content" class="content">
-                                    <div class="content-list"></div>
-                                </div>
-                                <img class="load" src="img/loading.gif" alt="">
-                                <!-- <img src="https://file.ipadown.com/tophub/assets/images/media/zhihu.com.png" width="300px" height="300px" alt=""> -->
+                        <div class="carousel-item">
+                            <div id="v2ex-content" class="content">
+                                <div class="content-list"></div>
                             </div>
-                            <div class="carousel-item">
-                                <div id="v2ex-content" class="content">
-                                    <div class="content-list"></div>
-                                </div>
-                                <!-- <img src="https://file.ipadown.com/tophub/assets/images/media/v2ex.com.png" width="300px" height="300px" alt=""> -->
+                            <img class="load" src="img/loading.gif" alt="">
+                            <!-- <img src="https://file.ipadown.com/tophub/assets/images/media/zhihu.com.png" width="300px" height="300px" alt=""> -->
+                        </div>
+                        <div class="carousel-item">
+                            <div id="tieba-content" class="content">
+                                <div class="content-list"></div>
                             </div>
-                            <div class="carousel-item">
-                                <div id="weibo-content" class="content">
-                                    <div class="content-list"> </div>
-                                </div>
-                                <!-- <img src="https://file.ipadown.com/tophub/assets/images/media/s.weibo.com.png" width="300px" height="300px" alt=""> -->
+                            <!-- <img src="https://file.ipadown.com/tophub/assets/images/media/v2ex.com.png" width="300px" height="300px" alt=""> -->
+                        </div>
+                        <div class="carousel-item">
+                            <div id="douban-content" class="content">
+                                <div class="content-list"> </div>
                             </div>
-                            <div class="carousel-item">
-                                <div id="tieba-content" class="content">
-                                    <div class="content-list"></div>
-                                </div>
-                                <!-- <img src="https://file.ipadown.com/tophub/assets/images/media/tieba.baidu.com.png" width="300px" height="300px" alt=""> -->
+                            <!-- <img src="https://file.ipadown.com/tophub/assets/images/media/s.weibo.com.png" width="300px" height="300px" alt=""> -->
+                        </div>
+                        <div class="carousel-item">
+                            <div id="hupu-content" class="content">
+                                <div class="content-list"></div>
                             </div>
-                            <div class="carousel-item">
-                                <div id="tianya-content" class="content">
-                                    <div class="content-list"></div>
-                                </div>
-                                <!-- <img src="https://file.ipadown.com/tophub/assets/images/media/bbs.tianya.cn.png" width="300px" height="300px" alt=""> -->
+                            <!-- <img src="https://file.ipadown.com/tophub/assets/images/media/tieba.baidu.com.png" width="300px" height="300px" alt=""> -->
+                        </div>
+                        <div class="carousel-item">
+                            <div id="github-content" class="content">
+                                <div class="content-list"></div>
                             </div>
-                            <div class="carousel-item">
-                                <div id="hupu-content" class="content">
-                                    <div class="content-list"></div>
-                                </div>
-                                <!-- <img src="https://file.ipadown.com/tophub/assets/images/media/bbs.hupu.com.png" width="300px" height="300px" alt=""> -->
-                            </div>
-                            <div class="carousel-item">
-                                <div id="github-content" class="content">
-                                    <div class="content-list"></div>
-                                </div>
-                                <!-- <img src="https://file.ipadown.com/tophub/assets/images/media/github.com.png" width="300px" height="300px" alt=""> -->
-                            </div>
-                            <div class="carousel-item">
-                                <div id="wallstreetcn-content" class="content">
-                                    <div class="content-list"></div>
-                                </div>
-                                <!-- <img src="https://file.ipadown.com/tophub/assets/images/media/wallstreetcn.com.png" width="300px" height="300px" alt=""> -->
-                            </div>
+                            <!-- <img src="https://file.ipadown.com/tophub/assets/images/media/bbs.tianya.cn.png" width="300px" height="300px" alt=""> -->
+                        </div>
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -125,18 +104,12 @@
                     "http://api-hot.mrcuriosity.org/sites/3/news?format=json",
                     "http://api-hot.mrcuriosity.org/sites/4/news?format=json",
                     "http://api-hot.mrcuriosity.org/sites/6/news?format=json",
-                    "http://api-hot.mrcuriosity.org/sites/7/news?format=json",
-                    "http://api-hot.mrcuriosity.org/sites/8/news?format=json",
-                    "http://api-hot.mrcuriosity.org/sites/9/news?format=json",
-                    "http://api-hot.mrcuriosity.org/sites/10/news?format=json"];
-        let selectors = ["#zhihu-content",
-                         "#v2ex-content",
+                    "http://api-hot.mrcuriosity.org/sites/7/news?format=json"];
+        let selectors = ["#v2ex-content",
                          "#tieba-content",
-                         "#tianya-content",
+                         "#douban-content",
                          "#hupu-content",
-                         "#github-content",
-                         "#wallstreetcn-content",
-                         "#weibo-content"];
+                         "#github-content"];
 
         /*内容轮播区域进行初始化*/
         carouselItem[0].style.opacity = "1";
@@ -208,7 +181,7 @@
             get(url, function(res){
                 let data = JSON.parse(res).data;
                 let content = document.querySelector(selector +" .content-list");
-                for (let i=0; i<15; i++) {
+                for (let i=0; i<data.length; i++) {
                     let item = document.createElement("div");
                     item.setAttribute("class", "content-item");
                     let a = document.createElement("a");
