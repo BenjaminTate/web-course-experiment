@@ -32,6 +32,13 @@ header{
     margin-top: 5px;
     color: #E5E3E6;
 }
+.header .menu a:after{
+    content: ">>";
+    display: inline;
+}
+.header .menu a:hover{
+    color: lightskyblue;
+}
 .main{
     width: 80%;
     height: 100%;
@@ -59,16 +66,14 @@ header{
 }
 .main-bar ul li{
     cursor: pointer;
-    width: 45px; /*每个元素的初始化宽度*/
+    width: 45px; /*ćŻä¸Şĺç´ çĺĺ§ĺĺŽ˝ĺşŚ*/
     text-align: center;
-    flex:auto;  /*这是关键*/
+    flex:auto;  /*čżćŻĺłéŽ*/
     line-height: 23px;
 }
 .active{
     background-color: #3273DC;
     border-radius: 5px;
-}
-.content{
 }
 .content-item{
     width:100%;
@@ -79,6 +84,9 @@ header{
 }
 .content-item a{
     padding: 20px;
+}
+.content-item a:hover{
+    color: lightskyblue;
 }
 .carousel{
     position: relative;
@@ -101,7 +109,6 @@ header{
     overflow: auto;
 }
 .carousel .wrap .carousel-item::-webkit-scrollbar {
-    /*���ع���*/
     display: none;
 }
 .carousel-item .load{
